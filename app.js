@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 //allow communication between frntend and backend
 app.use(cors({
   credentials: true,
-  origin: "http://localhost:5173",
+  origin: "process.env.FRONTEND_URL",
 }));
 //=================
 app.use(morgan());
