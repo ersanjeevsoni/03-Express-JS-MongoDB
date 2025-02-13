@@ -1,0 +1,72 @@
+================first install required packages
+--> create app.js file
+-->npm i -y : to make birth certificate
+--> npm i express: as a backend framework
+--> npm i -g nodemon (optional; in case of not global server)
+-->npm i mongodb: as database
+--> npm i mongoose: as a middleman to make it easier to talk to database(ODM)
+====================================
+--> in app.js
+  required express, make app, listen it to port and add success callback
+  =========================
+  -->make folder config
+  =================structure of files and folder===
+  app.js
+  config folder
+  .gitignore
+  node_modules folder
+  package-lock.json
+  package.json
+  ===========================
+  -->in dbConfig.js
+  const mongoose=require(''mongoose);
+  mongoose.connect();
+  ========next step=====
+  connect-->driver..>url copy-->done
+  netwrok access-->add id address-->allow access from anywhere--> confirm
+  to change database password--> database access-->edit-->write new password-->update user
+  ===================next step=====
+   -->in dbConfig.js update url and add your password in place of <db_password>
+  const mongoose=require(''mongoose);
+  mongoose.connect(<url>);
+// update <url> by your db url with password
+  mongoose.connect(`mongodb+srv://firstdb:<db_password>@cluster0.ygpjc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
+  ==========next step======
+  in app.js: add dbConfig file to the execution folw
+
+  =============next step========
+  mongoDB structure
+  -->project(No physical significance)
+   -->clustr(Machine)
+     --->database(generally, one application has one db)
+       -->collection(folder of dataFile)
+         -->document(dataFile)::BSON formate (Binary+JSON)
+           --> 
+===================next step=========
+google: "mongodb compass"-->  download--connect db
+
+===========next step======
+create a database using Atlas and add database name in your url
+
+goto dbConfig File--> in your connection url, mention the database name after "/" and before "?"
+Note: if database not exist then will be created
+
+=====================next step======
+
+create model or schema folder having named file productModel.js
+==============to know more about mongoos documentation===========
+
+https://mongoosejs.com/docs/documents.html
+
+=====================next step=========
+schema-->model-->document
+x-->collection-->document
+======================next step============
+
+in productModel.js
+const mongoos=require('mongoos');
+===================Read Operation=========
+app.get("/api/v1/products",(reg,res)=>{
+
+});
+
